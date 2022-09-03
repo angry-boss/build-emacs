@@ -87,29 +87,26 @@ Example
     $ ./build-emacs-from-tar -v -j 8 emacs-28.1.tar.bz2 release
       ... Lots out output snipped ...
     Built Emacs-28.1-11-x86_64.tar.bz2, Emacs-28.1-11-x86_64-extra-source.tar
-
-      ... More output snipped ...
-    created: Emacs-28.1-universal.dmg
     
 ### Running Emacs.app from the command line
 
+Create shell emacs script with:
+
     $ nano /usr/local/bin/emacs
-    
 ```
 #!/bin/sh
 /Applications/Emacs.app/Contents/MacOS/Emacs "$@"
 ```
 
-    $ ln -s /Applications/Emacs.app/Contents/MacOS/bin/emacsclient /usr/local/bin
-    
+ And ec script:
     $ nano /usr/local/bin/ec
-
 ```
 #!/bin/sh
 which osascript > /dev/null 2>&1 && osascript -e 'tell application "Emacs" to activate'
 emacsclient -c "$@"
 ```
-
+Create alias for emacsclient:
+$ ln -s /Applications/Emacs.app/Contents/MacOS/bin/emacsclient /usr/local/bin
 Add "alias emacsclient=ec" to  ".zshrc".
 
 License
