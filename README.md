@@ -108,7 +108,6 @@ Example
     $ ./combine-and-package -v --sign="my identity" Emacs-28.1-11-x86_64.tar.bz2
       ... More output snipped ...
     created: Emacs-28.1-universal.dmg
-    $ codesign -dvv /Volumes/Emacs/Emacs.app
 
 License
 -------
