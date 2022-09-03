@@ -98,7 +98,7 @@ Example
 
     $ ./fetch-emacs-from-ftp -v ftp://ftp.gnu.org/pub/gnu/emacs
     curl --continue-at - --silent -O ftp://ftp.gnu.org/pub/gnu/emacs/emacs-28.1.tar.xz
-    /usr/local/bin/xzcat emacs-28.1.tar.xz
+    $ /usr/local/bin/xzcat emacs-28.1.tar.xz
     $ ls *.bz2
     emacs-28.1.tar.bz2
     $ ./build-emacs-from-tar -v -j 8 emacs-28.1-11.6.tar.bz2 release
