@@ -103,7 +103,7 @@ Example
     emacs-28.1.tar.bz2
     $ ./build-emacs-from-tar -v -j 8 emacs-28.1-11.6.tar.bz2 release
       ... Lots out output snipped ...
-    Built Emacs-28.1-11-x86_64.tar.bz2, Emacs-28.1-11-x86_64-extra-source.tar
+    Built Emacs-28.1-11.6-x86_64.tar.bz2, Emacs-28.1-11.6-x86_64-extra-source.tar
     $ security find-identity
     $ ./combine-and-package -v --sign="my identity" Emacs-28.1-11.6-x86_64.tar.bz2
       ... More output snipped ...
