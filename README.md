@@ -57,9 +57,6 @@ This is the main build script. It takes a tar file and a "kind" (`pretest`,
 `nightly`, or `release`) as input and unpacks the tar, builds it for a
 single architecture, and tars up the resulting Emacs.app file.
 
-You can tell it to build an architecture other than the default with the
-`--arch` option (`--arch=powerpc` or `--arch=i386`).
-
 Builds of the main Emacs source repository are expected to be packaged up
 into tars elsewhere. http://emacsformacosx.com has a Jenkins job that pulls down
 the latest code and then tars it up like so:
@@ -90,10 +87,30 @@ Example
     $ ./build-emacs-from-tar -v -j 8 emacs-28.1.tar.bz2 release
       ... Lots out output snipped ...
     Built Emacs-28.1-11-x86_64.tar.bz2, Emacs-28.1-11-x86_64-extra-source.tar
-    $ security find-identity
-    $ ./combine-and-package -v --sign="my identity" Emacs-28.1-11-x86_64.tar.bz2
+
       ... More output snipped ...
     created: Emacs-28.1-universal.dmg
+    
+### Running Emacs.app from the command line
+
+    $ nano /usr/local/bin/emacs
+    
+```
+#!/bin/sh
+/Applications/Emacs.app/Contents/MacOS/Emacs "$@"
+```
+
+    $ ln -s /Applications/Emacs.app/Contents/MacOS/bin/emacsclient /usr/local/bin
+    
+    $ nano /usr/local/bin/ec
+
+```
+#!/bin/sh
+which osascript > /dev/null 2>&1 && osascript -e 'tell application "Emacs" to activate'
+emacsclient -c "$@"
+```
+
+Add "alias emacsclient=ec" to  ".zshrc".
 
 License
 -------
