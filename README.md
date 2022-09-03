@@ -107,6 +107,7 @@ which osascript > /dev/null 2>&1 && osascript -e 'tell application "Emacs" to ac
 emacsclient -c "$@"
 ```
 Create alias for emacsclient:
+
 $ ln -s /Applications/Emacs.app/Contents/MacOS/bin/emacsclient /usr/local/bin
 Add "alias emacsclient=ec" to  ".zshrc".
 
