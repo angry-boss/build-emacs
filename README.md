@@ -108,7 +108,7 @@ emacsclient -c "$@"
 ```
 Create alias for emacsclient:
 
-$ ln -s /Applications/Emacs.app/Contents/MacOS/bin/emacsclient /usr/local/bin
+    $ ln -s /Applications/Emacs.app/Contents/MacOS/bin/emacsclient /usr/local/bin
 Add "alias emacsclient=ec" to  ".zshrc".
 
 License
