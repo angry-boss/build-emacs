@@ -100,12 +100,12 @@ Example
     curl --continue-at - --silent -O ftp://ftp.gnu.org/pub/gnu/emacs/emacs-28.1.tar.xz
     /usr/local/bin/xzcat emacs-28.1.tar.xz
     $ ls *.bz2
-    emacs-25.1.tar.bz2
-    $ ./build-emacs-from-tar -v -j 8 emacs-28.1.tar.bz2 release
+    emacs-28.1.tar.bz2
+    $ ./build-emacs-from-tar -v -j 8 emacs-28.1-11.6.tar.bz2 release
       ... Lots out output snipped ...
     Built Emacs-28.1-11-x86_64.tar.bz2, Emacs-28.1-11-x86_64-extra-source.tar
     $ security find-identity
-    $ ./combine-and-package -v --sign="my identity" Emacs-28.1-11-x86_64.tar.bz2
+    $ ./combine-and-package -v --sign="my identity" Emacs-28.1-11.6-x86_64.tar.bz2
       ... More output snipped ...
     created: Emacs-28.1-universal.dmg
 
