@@ -99,6 +99,7 @@ Create shell emacs script with:
 ```
 
  And ec script:
+ 
     $ nano /usr/local/bin/ec
 ```
 #!/bin/sh
